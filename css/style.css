@@ -141,12 +141,14 @@ h2 span {
     -webkit-backdrop-filter: blur(18px);
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+     background: black;
 }
 
 .nav-container {
     width: min(100% - 48px, var(--max-width));
     height: 78px;
     margin: auto;
+   
 
     display: flex;
     align-items: center;
@@ -154,10 +156,10 @@ h2 span {
 }
 
 .logo {
-    font-size: 17px;
-    font-weight: 900;
-    letter-spacing: 2px;
+    width: 180px;
+    height: auto;
 }
+
 
 .logo span {
     color: var(--gold);
@@ -172,20 +174,20 @@ h2 span {
 .nav-links a {
     font-size: 13px;
     font-weight: 600;
-    color: #444;
+    color: white;
 
     transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-    color: var(--black);
+    color: var(--gold);
 }
 
 .nav-button {
     padding: 11px 21px;
 
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
 
     border-radius: 100px;
 

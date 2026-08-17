@@ -761,11 +761,11 @@ h2 span {
 /* ==================== FOOTER ==================== */
 
 .footer {
-    background: #0d0d0d;
+    background: black;
 
     color: white;
 
-    padding: 70px max(24px, calc((100% - var(--max-width)) / 2)) 25px;
+    padding: 10px max(24px, calc((100% - var(--max-width)) / 2)) 25px;
 }
 
 .footer-main {
@@ -773,22 +773,27 @@ h2 span {
 
     justify-content: space-between;
 
-    gap: 50px;
+    gap: 0px;
 
     padding-bottom: 70px;
 }
 
-.footer-brand p {
-    margin-top: 15px;
-
+.footer-brand  {
+    padding: 15px;
+    text-align: center;
     color: #777;
+}
 
-    font-size: 13px;
+.footer-logo {
+
+   width: 300px;
+   height:auto;
 }
 
 .footer-links {
     display: flex;
-
+    padding: 15px;
+    padding-top: 60px;
     gap: 90px;
 }
 
@@ -822,7 +827,7 @@ h2 span {
 }
 
 .footer-bottom {
-    padding-top: 25px;
+    padding-top: 5px;
 
     border-top: 1px solid #222;
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +32,15 @@
         }
 
         .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 5px;
+            width: 180px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 180px;
+            height: auto;
+            display: block;
         }
 
         .back-button {
@@ -262,9 +268,9 @@
 
     <header>
 
-        <div class="logo">
-            MACRO
-        </div>
+        <a href="../index.html" class="logo">
+            <img src="../assets/logo/logo.png" alt="Macro Originals Logo">
+        </a>
 
         <a href="../index.html" class="back-button">
             ← Continue Shopping
@@ -388,4 +394,5 @@
     </main>
 
 </body>
+
 </html>

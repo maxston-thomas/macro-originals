@@ -15,6 +15,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background: #f5f5f3;
@@ -125,6 +126,44 @@ h2 span {
     background: var(--white);
 }
 
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background: #151515;
+    color: white;
+
+    border: 1px solid #2d2d2d;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.cart-button:hover {
+    background: #000000;
+    border-color: var(--gold);
+}
+
+.cart-icon {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.cart-count {
+    color: #d4a72c;
+    font-weight: 700;
+}
 
 /* ==================== NAVBAR ==================== */
 
@@ -141,14 +180,14 @@ h2 span {
     -webkit-backdrop-filter: blur(18px);
 
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-     background: black;
+    background: black;
 }
 
 .nav-container {
     width: min(100% - 48px, var(--max-width));
     height: 78px;
     margin: auto;
-   
+
 
     display: flex;
     align-items: center;
@@ -277,11 +316,9 @@ h2 span {
     overflow: hidden;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #202020,
-            #080808
-        );
+            #080808);
 
     box-shadow:
         0 40px 80px rgba(0, 0, 0, 0.22);
@@ -374,7 +411,7 @@ h2 span {
     letter-spacing: -3px;
 }
 
-.section-heading > p {
+.section-heading>p {
     max-width: 390px;
 
     color: #777;
@@ -387,7 +424,7 @@ h2 span {
     text-align: center;
 }
 
-.centered > p:last-child {
+.centered>p:last-child {
     margin: 20px auto 0;
 }
 
@@ -447,29 +484,23 @@ h2 span {
 
 .portrait-card {
     background:
-        radial-gradient(
-            circle at 50% 40%,
+        radial-gradient(circle at 50% 40%,
             #777,
-            #171717 65%
-        );
+            #171717 65%);
 }
 
 .tshirt-card {
     background:
-        radial-gradient(
-            circle at 50% 40%,
+        radial-gradient(circle at 50% 40%,
             #555,
-            #111 65%
-        );
+            #111 65%);
 }
 
 .artwork-card {
     background:
-        radial-gradient(
-            circle at 50% 40%,
+        radial-gradient(circle at 50% 40%,
             #444,
-            #080808 65%
-        );
+            #080808 65%);
 }
 
 .collection-image span {
@@ -494,10 +525,8 @@ h2 span {
     padding: 30px;
 
     background:
-        linear-gradient(
-            transparent,
-            rgba(0, 0, 0, 0.9)
-        );
+        linear-gradient(transparent,
+            rgba(0, 0, 0, 0.9));
 }
 
 .collection-content p {
@@ -556,7 +585,7 @@ h2 span {
     margin-bottom: 25px;
 }
 
-.featured-content > p:not(.eyebrow) {
+.featured-content>p:not(.eyebrow) {
     color: #aaa;
 
     line-height: 1.7;
@@ -596,11 +625,9 @@ h2 span {
     border-radius: 35px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #292929,
-            #111
-        );
+            #111);
 
     display: flex;
     align-items: center;
@@ -687,7 +714,7 @@ h2 span {
     margin-bottom: 30px;
 }
 
-.why-content > p:last-child {
+.why-content>p:last-child {
     max-width: 550px;
 
     color: #777;
@@ -751,7 +778,7 @@ h2 span {
     margin-bottom: 25px;
 }
 
-.final-cta > p:not(.eyebrow) {
+.final-cta>p:not(.eyebrow) {
     color: #777;
 
     margin-bottom: 30px;
@@ -778,7 +805,7 @@ h2 span {
     padding-bottom: 70px;
 }
 
-.footer-brand  {
+.footer-brand {
     padding: 15px;
     text-align: center;
     color: #777;
@@ -786,8 +813,8 @@ h2 span {
 
 .footer-logo {
 
-   width: 300px;
-   height:auto;
+    width: 300px;
+    height: auto;
 }
 
 .footer-links {
@@ -937,7 +964,7 @@ h2 span {
         display: block;
     }
 
-    .section-heading > p {
+    .section-heading>p {
         margin-top: 20px;
     }
 

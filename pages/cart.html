@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | Macro Originals</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #111;
+        }
+
+        /* NAVBAR */
+
+        header {
+            height: 80px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.2s ease;
+        }
+
+        .back-button:hover {
+            color: #d4a72c;
+        }
+
+        /* MAIN */
+
+        .cart-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 25px;
+        }
+
+        .cart-title {
+            margin-bottom: 35px;
+        }
+
+        .cart-title p {
+            color: #8a8a8a;
+            font-size: 13px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .cart-title h1 {
+            font-size: 42px;
+            font-weight: 600;
+        }
+
+        /* CART LAYOUT */
+
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 25px;
+        }
+
+        /* PRODUCTS */
+
+        .cart-items {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-image {
+            width: 90px;
+            height: 90px;
+            background-color: #eeeeee;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+            margin-bottom: 7px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            padding: 6px 10px;
+        }
+
+        .quantity button {
+            border: none;
+            background: none;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .price {
+            font-weight: 600;
+            min-width: 70px;
+            text-align: right;
+        }
+
+        /* SUMMARY */
+
+        .cart-summary {
+            background-color: #000;
+            color: white;
+            border-radius: 14px;
+            padding: 28px;
+            height: fit-content;
+        }
+
+        .cart-summary h2 {
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .checkout-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #d4a72c;
+            color: #000;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .checkout-button:hover {
+            background-color: #e5bd4c;
+        }
+
+        /* EMPTY CART */
+
+        .empty-cart {
+            display: none;
+            text-align: center;
+            background: white;
+            border-radius: 14px;
+            padding: 70px 20px;
+        }
+
+        .empty-cart-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .empty-cart h2 {
+            margin-bottom: 10px;
+        }
+
+        .empty-cart p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .shop-button {
+            display: inline-block;
+            padding: 12px 22px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .cart-title h1 {
+                font-size: 34px;
+            }
+
+            .cart-item {
+                flex-wrap: wrap;
+            }
+
+            .price {
+                margin-left: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            MACRO
+        </div>
+
+        <a href="../index.html" class="back-button">
+            ← Continue Shopping
+        </a>
+
+    </header>
+
+
+    <main class="cart-container">
+
+        <div class="cart-title">
+            <p>YOUR SELECTION</p>
+            <h1>My Cart</h1>
+        </div>
+
+
+        <div class="cart-layout">
+
+            <!-- CART ITEMS -->
+
+            <section class="cart-items">
+
+                <div class="cart-item">
+
+                    <div class="product-image">
+                        IMAGE
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Custom Original Tee</h3>
+                        <p>Black • Medium</p>
+                    </div>
+
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                    <div class="price">
+                        ₹999
+                    </div>
+
+                </div>
+
+
+                <div class="cart-item">
+
+                    <div class="product-image">
+                        IMAGE
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Original Hoodie</h3>
+                        <p>Black • Large</p>
+                    </div>
+
+                    <div class="quantity">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                    <div class="price">
+                        ₹1,499
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUMMARY -->
+
+            <aside class="cart-summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>₹2,498</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span>Free</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>₹2,498</span>
+                </div>
+
+                <button class="checkout-button">
+                    Proceed to Checkout
+                </button>
+
+            </aside>
+
+        </div>
+
+
+        <!-- EMPTY CART -->
+
+        <div class="empty-cart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <h2>Your cart is empty</h2>
+
+            <p>Looks like you haven't found your original yet.</p>
+
+            <a href="../index.html" class="shop-button">
+                Start Shopping
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

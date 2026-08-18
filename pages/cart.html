@@ -23,24 +23,28 @@
         /* NAVBAR */
 
         header {
-            height: 80px;
+            height: 78px;
             background-color: #000;
+        }
+
+        .cart-nav-container {
+            width: min(100% - 48px, 1280px);
+            height: 78px;
+            margin: auto;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 8%;
         }
 
-        .logo {
-            width: 180px;
-            display: flex;
-            align-items: center;
-        }
+
 
         .logo img {
             width: 180px;
             height: auto;
             display: block;
+
+            transform: translateX(-7.5px);
         }
 
         .back-button {
@@ -267,15 +271,17 @@
 <body>
 
     <header>
+        <div class="cart-nav-container">
 
-        <a href="../index.html" class="logo">
-            <img src="../assets/logo/logo.png" alt="Macro Originals Logo">
-        </a>
+            <a href="../index.html" class="logo">
+                <img src="../assets/logo/logo.png" alt="Macro Originals Logo">
+            </a>
 
-        <a href="../index.html" class="back-button">
-            ← Continue Shopping
-        </a>
+            <a href="../index.html" class="back-button">
+                ← Continue Shopping
+            </a>
 
+        </div>
     </header>
 
 
